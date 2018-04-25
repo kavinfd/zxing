@@ -27,6 +27,16 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>javase</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>javase</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <parent>
@@ -74,7 +84,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -85,7 +95,7 @@
         </configuration>
       </plugin>
     </plugins>
-  </build>  
-  
+  </build>
+
 </project>
 

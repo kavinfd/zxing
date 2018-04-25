@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.zxing.qrcode;
+package test;
 
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.client.j2se.ImageReader;
-import com.google.zxing.common.BitMatrix;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.HybridBinarizer;
+import com.google.zxing.qrcode.QRCodeReader;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -46,6 +47,12 @@ public final class SampleDecoder extends Assert {
     }
     LuminanceSource source = new BufferedImageLuminanceSource(image);
     BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+    BufferedImage bufferedImage = null;
+    try {
+      bufferedImage = MatrixToImageWriter.toBufferedImage(bitmap.getBlackMatrix());
+    } catch (NotFoundException e) {
+      e.printStackTrace();
+    }
     Result result = null;
     QRCodeReader qrCodeReader = new QRCodeReader();
     try {
